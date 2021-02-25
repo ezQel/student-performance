@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "student-results-2b75e": {
+      "hosting": {
+        "student-performance": [
+          "student-results-2b75e"
+        ]
+      }
+    }
+  }
+}

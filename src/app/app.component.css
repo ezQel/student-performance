@@ -1,0 +1,215 @@
+.performance {
+    margin: 16px 64px;
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 0 rgba(177, 177, 177, 0.418);
+}
+
+.student-info {
+    display: flex;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.student-info .student-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background-color: black;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 16px;
+}
+
+.student-info .details {
+    display: flex;
+    flex-direction: column;
+}
+
+.student-no {
+    font-size: 0.775em;
+}
+
+.student-class {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #555555;
+}
+
+.exam-results {
+    display: flex;
+}
+
+.exam-results .subjects {
+    flex: 1;
+    margin-right: 64px;
+}
+
+.subjects table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    color: #555555;
+    font-size: 0.7em;
+}
+
+th {
+    text-align: start;
+}
+
+td {
+    padding: 16px 0;
+}
+
+.count {
+    padding-right: 16px;
+}
+
+tr {
+    border-top: 1px solid #eeeeeecb;
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: #F8F9FA;
+}
+
+.score-deviation {
+    margin-left: 32px;
+    font-size: 0.575em;
+}
+
+.summary {
+    flex: 1;
+}
+
+.summary svg {
+    /* width: 1.1em;
+    height: 1.1em; */
+    fill: #74D348;
+}
+
+svg.up {
+    fill: #74D348;
+}
+
+svg.down {
+    fill: #FD0000;
+}
+
+.summary .mean, .summary .position {
+    margin-bottom: 16px;
+}
+
+.mean .marks, .mean .grade, .position .stream, .position .overall {
+    display: inline-block;
+    vertical-align: top;
+    margin: 8px;
+    border: 1px solid #eeeeee;
+    border-radius: 6px;
+    padding: 16px 32px;
+    text-align: center;
+    color: #555555;
+    font-size: 0.775em;
+    font-weight: 600;
+}
+
+.label {
+    margin-top: 8px;
+}
+
+.big {
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.remark {
+    border: 1px solid #eeeeee;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 8px;
+    color: #444444;
+}
+
+.remark .by {
+    margin-top: 4px;
+    font-style: italic;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 1.4em;
+    margin-bottom: 0;
+    color: #444444;
+}
+
+h2 {
+    font-size: 1em;
+    color: #444444;
+}
+
+h3 {
+    font-size: 0.9em;
+    color: #555555;
+    margin: 0;
+}
+
+.subject {
+    padding-left: 24px;
+}
+
+.performance-history {
+    margin: 32px 64px;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 0 rgba(177, 177, 177, 0.418);
+    padding: 16px;
+    background-color: #ffffff;
+}
+
+.subject-card {
+    background-color: white;
+    width: fit-content;
+    border-radius: 6px;
+    position: fixed;
+    left: 64px;
+    right: 0;
+    top: 64px;
+    z-index: 5;
+}
+
+.blur {
+    background-color: #444444c2;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+@media screen and (max-width: 960px) {    
+    .exam-results .subjects {
+        flex: 1;
+        margin-right: 0;
+    }
+
+    .exam-results {
+        flex-direction: column;
+    }
+
+    .summary {
+        margin-top: 32px;
+    }
+}
+
+@media screen and (max-width: 600px) {    
+   .performance, .performance-history{
+       margin: 8px;
+   }
+
+}

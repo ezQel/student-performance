@@ -1,0 +1,38 @@
+<div class="subject">
+
+    <h2>{{subject.subject_name}}</h2>
+
+    <div class="marks">
+        <div class="big">{{subject.score}}</div>
+        <div *ngIf="subject.deviation < 0">
+          {{subject.deviation}}
+          <svg class="down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"/></svg>
+        </div>
+        <div *ngIf="subject.deviation > 0">
+          +{{subject.deviation}}
+          <svg class="up" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg>
+        </div>
+        <div *ngIf="subject.deviation === 0">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 12l-4-4v3H3v2h15v3l4-4z"/></svg>
+        </div>
+        <div role="heading" class="label">Marks</div>
+    </div>
+
+    
+    <div class="grade">
+        <div class="big">{{subject.grade}}</div>
+        <div role="heading" class="label">Grade</div>
+    </div>
+
+    <div class="position">
+        <div><span class="big">{{subject.rank}}</span> / {{subject.rank_out_of}}</div>  
+        <div role="heading" class="label">Rank</div>
+    </div>
+
+    <div class="comment">
+        <q>{{subject.comment}}</q>
+        <div role="heading" class="label">Comment</div>
+    </div>
+
+
+</div>

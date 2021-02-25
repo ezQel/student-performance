@@ -1,0 +1,29 @@
+.marks, .grade, .position, .comment {
+    border-top: 1px solid #eeeeee;
+    padding: 8px 16px;
+}
+
+.label {
+    margin-top: 8px;
+    color: #333333;
+    font-weight: 600;
+}
+
+.big {
+    font-size: 2em;
+    font-weight: 800;
+}
+
+h2 {
+    color: #444444;
+    margin: 0;
+    padding: 8px 16px;
+}
+
+svg.up {
+    fill: #74D348;
+}
+
+svg.down {
+    fill: #FD0000;
+}

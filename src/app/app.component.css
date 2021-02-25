@@ -1,15 +1,15 @@
 .performance {
     margin: 16px 64px;
-    padding: 16px;
-    background-color: #ffffff;
-    border-radius: 6px;
-    box-shadow: 0 0 3px 0 rgba(177, 177, 177, 0.418);
 }
 
 .student-info {
     display: flex;
     padding-bottom: 8px;
-    border-bottom: 1px solid #eeeeee;
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 0 rgba(177, 177, 177, 0.418);
+    color: #455463;
 }
 
 .student-info .student-photo {
@@ -36,16 +36,19 @@
 .student-class {
     font-size: 0.9em;
     font-weight: 600;
-    color: #555555;
 }
 
 .exam-results {
     display: flex;
+    margin-top: 24px;
 }
 
 .exam-results .subjects {
     flex: 1;
-    margin-right: 64px;
+    margin-right: 16px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 0 rgba(177, 177, 177, 0.418);
 }
 
 .subjects table {
@@ -54,12 +57,13 @@
 }
 
 thead {
-    color: #555555;
+    color: #455463;
     font-size: 0.7em;
 }
 
 th {
     text-align: start;
+    padding: 8px 0;
 }
 
 td {
@@ -86,11 +90,16 @@ tr:hover {
 
 .summary {
     flex: 1;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 0 rgba(177, 177, 177, 0.418);
+}
+
+.summary .content {
+    padding: 16px;
 }
 
 .summary svg {
-    /* width: 1.1em;
-    height: 1.1em; */
     fill: #74D348;
 }
 
@@ -103,12 +112,14 @@ svg.down {
 }
 
 .summary .mean, .summary .position {
+    display: flex;
     margin-bottom: 16px;
 }
 
 .mean .marks, .mean .grade, .position .stream, .position .overall {
-    display: inline-block;
-    vertical-align: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 8px;
     border: 1px solid #eeeeee;
     border-radius: 6px;
@@ -121,6 +132,11 @@ svg.down {
 
 .label {
     margin-top: 8px;
+}
+
+.bigger {
+    font-size: 4em;
+    font-weight: 800;
 }
 
 .big {
@@ -146,18 +162,23 @@ svg.down {
 h1 {
     font-size: 1.4em;
     margin-bottom: 0;
-    color: #444444;
-}
-
-h2 {
-    font-size: 1em;
-    color: #444444;
+    color: #455463;
 }
 
 h3 {
     font-size: 0.9em;
-    color: #555555;
+    color: #455463;
     margin: 0;
+}
+
+h2 {
+    font-size: 1em;
+    /* background-color: #f1f3f469; */
+    color: #3296C7;
+    margin: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 10px 16px;
 }
 
 .subject {
@@ -168,8 +189,11 @@ h3 {
     margin: 32px 64px;
     border-radius: 6px;
     box-shadow: 0 0 3px 0 rgba(177, 177, 177, 0.418);
-    padding: 16px;
     background-color: #ffffff;
+}
+
+.history-graph {
+    padding: 8px;
 }
 
 .subject-card {

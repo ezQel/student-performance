@@ -19,10 +19,10 @@
     </div>
   </div>
 
-  <h2>{{results.exam_name}} Results</h2>
 
   <div class="exam-results">
     <div class="subjects">
+      <h2>{{results.exam_name}} Results</h2>
       <table>
         <thead>
           <th class="subject">Subject</th>
@@ -52,76 +52,79 @@
       </table>  
     </div>
     
-    <div class="summary"> 
-      <h3>Mean</h3>
-      <div class="mean">
-        <div class="marks">
-          <div class="big">{{meanMarks.avg_score}}</div>
-          <div *ngIf="meanMarks.deviation < 0">
-            {{meanMarks.deviation}}
-            <svg class="down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"/></svg>
+    <div class="summary">
+      <h2>Summary</h2>
+      <div class="content">
+        <h3>Mean</h3>
+        <div class="mean">
+          <div class="grade">
+            <div class="bigger">{{results.mean_grade}}</div>
+            <div role="heading" class="label">Grade</div>
           </div>
-          <div *ngIf="meanMarks.deviation > 0">
-            +{{meanMarks.deviation}}
-            <svg class="up" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg>
+          <div class="marks">
+            <div class="big">{{meanMarks.avg_score}}</div>
+            <div *ngIf="meanMarks.deviation < 0">
+              {{meanMarks.deviation}}
+              <svg class="down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"/></svg>
+            </div>
+            <div *ngIf="meanMarks.deviation > 0">
+              +{{meanMarks.deviation}}
+              <svg class="up" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg>
+            </div>
+            <div *ngIf="meanMarks.deviation === 0">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 12l-4-4v3H3v2h15v3l4-4z"/></svg>
+            </div>
+            <div role="heading" class="label">Marks</div>
           </div>
-          <div *ngIf="meanMarks.deviation === 0">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 12l-4-4v3H3v2h15v3l4-4z"/></svg>
-          </div>
-          <div role="heading" class="label">Marks</div>
         </div>
-        <div class="grade">
-          <div class="big">{{results.mean_grade}}</div>
-          <div role="heading" class="label">Grade</div>
+  
+        <h3>Position</h3>
+        <div class="position">
+          <div class="stream">
+            <div><span class="big">{{streamPosition.position}}</span> / {{streamPosition.position_out_of}}</div>
+            <div *ngIf="streamPosition.deviation < 0">
+              -{{streamPosition.deviation}}
+              <svg class="down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"/></svg>
+            </div>
+            <div *ngIf="streamPosition.deviation > 0">
+              +{{streamPosition.deviation}}
+              <svg class="up" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg>
+            </div>
+            <div *ngIf="streamPosition.deviation === 0">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 12l-4-4v3H3v2h15v3l4-4z"/></svg>
+            </div>
+            <div role="heading" class="label">Stream</div>
+          </div>
+          <div class="overall">
+            <div><span class="big">{{overallPosition.position}}</span> / {{overallPosition.position_out_of}}</div>
+            <div *ngIf="overallPosition.deviation < 0">
+              -{{overallPosition.deviation}}
+              <svg class="down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"/></svg>
+            </div>
+            <div *ngIf="overallPosition.deviation > 0">
+              +{{overallPosition.deviation}}
+              <svg class="up" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg>
+            </div>
+            <div *ngIf="overallPosition.deviation === 0">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 12l-4-4v3H3v2h15v3l4-4z"/></svg>
+            </div>
+            <div role="heading" class="label">Overall</div>
+          </div>  
+        </div>
+  
+        <div>
+          <h3>Remarks</h3>
+          <div class="remark">
+            <q>{{results.principals_remarks}}</q>
+             <div class="by">- Principal</div>
+          </div>
+          <div class="remark">
+            <q>{{results.class_teachers_remarks}}</q>
+            <div class="by">- Class Teacher</div>
+          </div>
         </div>
       </div>
-
-      <h3>Position</h3>
-      <div class="position">
-        <div class="stream">
-          <div><span class="big">{{streamPosition.position}}</span> / {{streamPosition.position_out_of}}</div>
-          <div *ngIf="streamPosition.deviation < 0">
-            -{{streamPosition.deviation}}
-            <svg class="down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"/></svg>
-          </div>
-          <div *ngIf="streamPosition.deviation > 0">
-            +{{streamPosition.deviation}}
-            <svg class="up" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg>
-          </div>
-          <div *ngIf="streamPosition.deviation === 0">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 12l-4-4v3H3v2h15v3l4-4z"/></svg>
-          </div>
-          <div role="heading" class="label">Stream</div>
-        </div>
-        <div class="overall">
-          <div><span class="big">{{overallPosition.position}}</span> / {{overallPosition.position_out_of}}</div>
-          <div *ngIf="overallPosition.deviation < 0">
-            -{{overallPosition.deviation}}
-            <svg class="down" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 18l2.29-2.29-4.88-4.88-4 4L2 7.41 3.41 6l6 6 4-4 6.3 6.29L22 12v6h-6z"/></svg>
-          </div>
-          <div *ngIf="overallPosition.deviation > 0">
-            +{{overallPosition.deviation}}
-            <svg class="up" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z"/></svg>
-          </div>
-          <div *ngIf="overallPosition.deviation === 0">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 12l-4-4v3H3v2h15v3l4-4z"/></svg>
-          </div>
-          <div role="heading" class="label">Overall</div>
-        </div>  
-      </div>
-
-      <div>
-        <h3>Remarks</h3>
-        <div class="remark">
-          <q>{{results.principals_remarks}}</q>
-           <div class="by">- Principal</div>
-        </div>
-        <div class="remark">
-          <q>{{results.class_teachers_remarks}}</q>
-          <div class="by">- Class Teacher</div>
-        </div>
-      </div>
-    </div>
+      </div> 
   </div>
 
 </div>
